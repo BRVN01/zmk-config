@@ -1,26 +1,32 @@
+
 / {
     chosen {
-        zmk,keyboard = &macrokeyboard;
+        zmk,kscan = &kscan0;
     };
 
-    macrokeyboard {
-        compatible = "zmk,direct-input";
-        label = "MacroKeyboard";
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix"; // Usando matriz de teclado
+        label = "KSCAN";
 
-        direct-gpios = <&gpio0 13 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, // Linha 0, Botão 0
-                       <&gpio0 14 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, // Linha 0, Botão 1
-                       <&gpio0 15 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, // Linha 0, Botão 2
+        // Defina os pinos das linhas
+        row-gpios = <
+            &gpio0 13 GPIO_ACTIVE_HIGH  // Linha 0
+            &gpio0 14 GPIO_ACTIVE_HIGH  // Linha 1
+            &gpio0 15 GPIO_ACTIVE_HIGH  // Linha 2
+            &gpio0 16 GPIO_ACTIVE_HIGH  // Linha 3
+        >;
 
-                       <&gpio0 16 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, // Linha 1, Botão 0
-                       <&gpio0 17 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, // Linha 1, Botão 1
-                       <&gpio0 18 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, // Linha 1, Botão 2
+        // Defina os pinos das colunas
+        col-gpios = <
+            &gpio0 17 GPIO_ACTIVE_HIGH  // Coluna 0
+            &gpio0 18 GPIO_ACTIVE_HIGH  // Coluna 1
+            &gpio0 19 GPIO_ACTIVE_HIGH  // Coluna 2
+        >;
 
-                       <&gpio0 19 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, // Linha 2, Botão 0
-                       <&gpio0 20 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, // Linha 2, Botão 1
-                       <&gpio0 21 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, // Linha 2, Botão 2
-
-                       <&gpio0 9 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, // Linha 3, Botão 0
-                       <&gpio0 10 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, // Linha 3, Botão 1
-                       <&gpio0 31 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>; // Linha 3, Botão 2
+        // Configurações de debounce
+        debounce-press-ms = <5>;
+        debounce-release-ms = <5>;
+        debounce-scan-period-ms = <1>;
+        poll-period-ms = <10>;
     };
 };
