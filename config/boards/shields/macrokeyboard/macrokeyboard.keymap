@@ -4,30 +4,30 @@
 
         base {
             bindings = <
-                &kp A  &kp B  &kp C  // Linha 0
-                &kp D  &kp E  &kp F  // Linha 1
-                &kp G  &kp H  &kp I  // Linha 2
-                &kp J  &kp K  &kp L  // Linha 3
+                &kp A,  &kp B,  &kp C   // Linha 0
+                &kp D,  &kp E,  &kp F   // Linha 1
+                &kp G,  &kp H,  &kp I   // Linha 2
+                &kp J,  &kp K,  &kp L   // Linha 3
             >;
             label = "Base";
         };
 
         sym {
             bindings = <
-                &kp N1  &kp N2  &kp N3  // Linha 0
-                &kp N4  &kp N5  &kp N6  // Linha 1
-                &kp N7  &kp N8  &kp N9  // Linha 2
-                &kp N0  &kp DOT  &kp COMMA  // Linha 3
+                &kp N1,  &kp N2,  &kp N3   // Linha 0
+                &kp N4,  &kp N5,  &kp N6   // Linha 1
+                &kp N7,  &kp N8,  &kp N9   // Linha 2
+                &kp N0,  &kp DOT, &kp COMMA // Linha 3
             >;
             label = "Sym";
         };
 
         nav {
             bindings = <
-                &kp UP    &kp PG_UP    &kp HOME  // Linha 0
-                &kp LEFT  &kp DOWN     &kp RIGHT // Linha 1
-                &kp INS   &kp DEL      &kp END   // Linha 2
-                &kp ESC   &kp SPACE    &kp ENTER // Linha 3
+                &kp UP,    &kp PG_UP,    &kp HOME   // Linha 0
+                &kp LEFT,  &kp DOWN,     &kp RIGHT  // Linha 1
+                &kp INS,   &kp DEL,      &kp END    // Linha 2
+                &kp ESC,   &kp SPACE,    &kp ENTER  // Linha 3
             >;
             label = "Nav";
         };
