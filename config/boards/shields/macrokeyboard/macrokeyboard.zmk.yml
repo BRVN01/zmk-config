@@ -1,0 +1,9 @@
+file_format: "1"
+id: macrokeyboard
+name: MacroKeyBoard
+type: shield
+url: https://github.com/BRVN01/zmk-config
+requires: [pro_micro]
+features:
+  - keys
+siblings:
