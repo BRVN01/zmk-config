@@ -19,7 +19,7 @@
                        <&gpio0 20 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, // Linha 2, Botão 1
                        <&gpio0 21 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, // Linha 2, Botão 2
 
-                       <&gpio0 09 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, // Linha 3, Botão 0
+                       <&gpio0 9 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, // Linha 3, Botão 0
                        <&gpio0 10 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>, // Linha 3, Botão 1
                        <&gpio0 31 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>; // Linha 3, Botão 2
     };
