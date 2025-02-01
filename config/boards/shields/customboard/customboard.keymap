@@ -1,8 +1,12 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
-
-&out OUT_USB
+#include <dt-bindings/zmk/bt.h>
 
 / {
     keymap {
@@ -10,9 +14,17 @@
 
         default_layer {
             bindings = <
-                &kp KP_N7
-                &kp KP_N4
-                &kp KP_N1
+    &kp N1 &kp N4 &kp N7 &kp N0
+    &kp N2 &kp N5 &kp N8 &kp 0x6B
+    &kp N3 &kp N6 &kp N9 &kp 0x72
+            >;
+        };
+
+        lower_layer {
+            bindings = <
+    &bt BT_CLR &none        &sys_reset       &bootloader
+    &trans     &bt BT_SEL 3 &bt BT_SEL 4 &none
+    &none      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2
             >;
         };
     };
