@@ -1,5 +1,0 @@
-
-config SHIELD_MACROKEYBOARD
-    bool "Macro Keyboard Shield"
-    default y
-
